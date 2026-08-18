@@ -12,7 +12,7 @@ The goal of the project were to engineer a ETL pipeline, segment the customer ba
 - Web Dashboard: dash, dash_bootstrap_components, plotly, keplergl
 - Machine Learning: scikit-learn, lifetimes (BTYD), mlxtend (FP-Growth)
 - Deep Learning: pytorch, optuna, PuLP
-- Similarity Search and Clustering: faiss, tslearn, KMeans, TSNE
+- Similarity Search and Clustering: faiss, dtaidistance, tslearn, joblib, KMeans, TSNE
 
 ## Methodologies
 Analytical Dashboard
@@ -21,7 +21,7 @@ Analytical Dashboard
 - Built choropleth network maps, tower scatter markers, and Sankey flow diagrams.
 
 Neural NMF and FAISS
-- Trained a NonNegative Matrix Factorization neural network using Softplus activations and negative sampling.
+- Trained a NonNegative Matrix Factorisation neural network using Softplus activations and negative sampling.
 - Memory mapped execution across 112 NUMA node threads pinned to 56 physical cores.
 - Queried latent space embeddings via faiss for hidden product affinities.
 - Applied IQR thresholding to isolate underserved users, followed by KMeans clustering.
@@ -44,6 +44,12 @@ FP-Growth/NBO
 - Mined sequential purchasing patterns using mlxtend FP-Growth across all transactions.
 - Deployed Next Best Offer (NBO) rules achieving up to 6.88x lift for plan upgrades.
 - Filtered rules to ensure product transitions is revenue positive.
+
+Time-Series Churn Signatures and DTW
+- Calculated dynamic time gaps between consecutive transactions to find user lifecycle trajectories.
+- Clustered churned sequences using Sakoe-Chiba constrained Dynamic Time Warping (DTW) and computed death signatures with DTW Barycenter Averaging (DBA).
+- Elaborated a parallelised and chunked C engine across 112 cores to evaluate ~3M active users against the decay signatures.
+- Combined DTW shape distance and inactivity to isolate ~195k soft churn users for win back marketing campaigns.  (made because of RFM aggregation limitations)
 
 ## Repository Structure
 
