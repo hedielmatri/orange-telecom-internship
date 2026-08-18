@@ -3,7 +3,7 @@
 ## Project Overview
 This repository contains the codebase, predictive models, and interactive dashboard developed during a Data Science internship at Orange Madagascar. The project uses real world telecom dataset. The data comprises ~2.9 million unique users and ~39 million transactions per quarter, and 36,633 network cells.
 
-The goal of the project were to engineer a ETL pipeline, segment the customer base, predict Customer Lifetime Value, build a Next Best Offer recommendation engine, and deploy a dynamic web dashboard to visualise regional revenue flows and network typologies.
+The goal of the project were to engineer a ETL pipeline, segment the customer base, predict Customer Lifetime Value, detect churn trajectories, build a Next Best Offer recommendation engine, and deploy a dynamic web dashboard to visualise regional revenue flows and network typologies.
 
 ### Note on Data Privacy. For privacy reasons, all outputs and datasets cannot be shown or distributed in this repository. All scripts are provided for demonstration only.
 
@@ -60,6 +60,6 @@ Time-Series Churn Signatures and DTW
 - data_faiss_bundle_exploration.ipynb: Faiss similarity search, TSNE, and KMeans clustering to detect underserved user.
 - data_month_merging.ipynb: Data preprocessing script combining multiple months of quarter user location and transaction logs.
 - data_stat_analysis.ipynb: Statistical testing and data distributions.
-- data_time_analysis.ipynb: BG/NBD and Gamma-Gamma survival models for CLV, FP-Growth association rules for the NBO recommendation model.
+- data_time_analysis.ipynb: BG/NBD and Gamma-Gamma survival models for CLV, FP-Growth association rules for the NBO recommendation model, DTW/DBA models for time-series decay signatures analysis.
 - data_nmf_bundle_creation.py: PyTorch training a NonNegative Matrix Factorization neural network.
 - data_pulp_bundle_creation.py: Optimisation using PuLP for constrained bundle creation.  
